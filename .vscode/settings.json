@@ -1,0 +1,65 @@
+{
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "eslint.format.enable": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.rulers": [
+        120
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx"
+    ],
+    "files.autoSave": "afterDelay",
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.suggestSelection": "recentlyUsed"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.suggestSelection": "recentlyUsed"
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/coverage": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.build": true,
+        "**/.gh-pages": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.suggestSelection": "recentlyUsed",
+        "editor.rulers": [
+            120
+        ],
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.suggestSelection": "recentlyUsed",
+        "editor.rulers": [
+            120
+        ],
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.linkedEditing": true
+}

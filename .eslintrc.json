@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "standard-with-typescript"
+  ],
+  "rules": {
+    "no-useless-constructor": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/return-await": "off",
+    "no-tabs": "off",
+    "@typescript-eslint/no-misused-promises": "off"
+  }
 }
