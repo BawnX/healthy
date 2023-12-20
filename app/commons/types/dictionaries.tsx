@@ -18,3 +18,8 @@ export interface Links {
   discord: string
   sponsor: string
 }
+
+export interface DictionaryStore {
+  dictionary: Dictionaries
+  setDictionary: (dictionary: Dictionaries) => void
+}

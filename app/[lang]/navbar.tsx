@@ -1,3 +1,4 @@
+'use client'
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -14,9 +15,11 @@ import {
   HeartFilledIcon,
   Logo
 } from '@/app/commons/icons'
-import { type NavItem, type Links } from '../commons/types/dictionaries'
+import { type Dictionaries } from '../commons/types/dictionaries'
+import { useDictionaryStore } from '../commons/store/dictionaryStore'
 
-export const Navbar = ({ links, navItems }: { links: Links, navItems: NavItem[] }): JSX.Element => {
+export const Navbar = (): JSX.Element => {
+  const { links }: Dictionaries = useDictionaryStore(state => state.dictionary)
   return (
     <NextUINavbar maxWidth="full" position="sticky" classNames={{
       item: [

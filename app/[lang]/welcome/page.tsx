@@ -1,5 +1,5 @@
 import { type JSX } from 'react'
-import { getDictionary } from '../dictionaries'
+import { getDictionary } from '../../commons/functions/dictionary'
 
 export default async function WelcomePage ({ params: { lang } }: { params: { lang: string } }): Promise<JSX.Element> {
   const dictionary = await getDictionary(lang)

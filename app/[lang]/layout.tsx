@@ -2,7 +2,7 @@ import '@/app/globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
 import { Navbar } from './navbar'
-import { getDictionary } from './dictionaries'
+import { getDictionary } from '../commons/functions/dictionary'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +15,8 @@ export default async function Root ({ children, params }: { children: React.Reac
   return (
     <html lang={params.lang} suppressHydrationWarning>
         <body className={inter.className} >
-          <Providers>
-            <Navbar links={dictionary.links} navItems={dictionary.navItems}></Navbar>
+          <Providers dictionary={dictionary}>
+            <Navbar />
             {children}
           </Providers>
         </body>
