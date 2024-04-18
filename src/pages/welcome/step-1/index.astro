@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PersonalData from "@/components/svg/personalData.astro";
+import Inputs from "@/components/molecules/step-1/inputs.astro";
+import Button from "@/components/atoms/button";
+---
+
+<Layout title="Welcome to Astro." mainClass="grid grid-cols-1 lg:grid-cols-2">
+    <section class="justify-items-center">
+        <h1 class="text-6xl text-primary">
+            <strong class="text-base-content">Información</strong> Básica
+        </h1>
+        <h2 class="md:text-2xl text-lg">
+            <strong class="text-base-content"
+                >Proporciona algunos datos básicos y únete a nuestra comunidad
+                dedicada a promover la salud y el bienestar.
+            </strong>
+        </h2>
+        <h3 class="md:text-2xl text-lg">
+            <strong class="text-base-content"
+                >Te mantendremos al tanto de consejos, recetas saludables,
+                rutinas de ejercicios personalizadas y mucho más.
+            </strong>
+        </h3>
+        <PersonalData
+            className="h-[650px] md:h-[750px] lg:h-[550px] aspect-auto"
+            toTransition="welcome"
+        />
+    </section>
+
+    <section class="flex justify-center items-center card bg-base-100">
+        <form
+            class="grid grid-cols-1 lg:grid-cols-2 content-between w-full justify-items-center"
+        >
+            <Inputs />
+
+            <section
+                class="w-full grid col-span-2 grid-cols-2 place-items-end px-4"
+            >
+                <span></span>
+
+                <Button textSize="default" type="submit" client:load>
+                    Siguiente
+                </Button>
+            </section>
+        </form>
+    </section>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import "@fontsource-variable/space-grotesk";
+import Navbar from "@/components/navbar/Navbar.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+	title: string;
+	mainClass: string;
+}
+
+const { title, mainClass } = Astro.props;
+const { theme } = Astro.locals;
+---
+
+<!doctype html>
+<html lang="en" data-theme={theme} transition:animate="none">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+
+	<body>
+		<Navbar is:global />
+		<main
+			transition:animate="fade"
+			class={`${mainClass} 2xl:px-60 xl:px-40 md:px-30 px-10 text-primary gap-2`}
+		>
+			<slot />
+		</main>
+
+		<style is:global>
+			html {
+				font-family: "Space Grotesk Variable", sans-serif;
+				@apply absolute top-0 z-[-2] h-screen w-screen bg-[theme(backgroundColor.base-100)];
+				background-image: radial-gradient(
+					theme(backgroundColor.base-content) 1px,
+					transparent 0
+				);
+				background-size: 20px 20px;
+				z-index: 1;
+			}
+
+			.button {
+				@apply p-2 cursor-pointer;
+			}
+
+			.button--rounded {
+				@apply rounded-full;
+			}
+
+			.button--neutral {
+				@apply bg-base-300 hover:bg-base-200  transition-all;
+			}
+		</style>
+	</body>
+</html>

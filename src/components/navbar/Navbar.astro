@@ -1,0 +1,13 @@
+---
+import SwitchThemeReact from "./SwitchTheme";
+import Logo from "./Logo.astro";
+---
+
+<nav class="navbar grid grid-cols-2 2xl:px-60 xl:px-40 md:px-30 sm:px-10 px-0">
+    <section>
+        <Logo />
+    </section>
+    <section class="flex justify-end">
+        <SwitchThemeReact client:only />
+    </section>
+</nav>

@@ -1,0 +1,119 @@
+---
+import Input, { type InputError } from "@/components/atoms/input";
+
+const nameErrors: InputError = {
+    tooShort: `El nombre es muy corto`,
+    patternMismatch: `Solo se aceptan letras`,
+    valueMissing: `Tu nombre es requerido`,
+    typeMismatch: "",
+    rangeOverflow: "",
+    rangeUnderflow: "",
+};
+
+const lastNameErrors: InputError = {
+    tooShort: `El apellido es muy corto`,
+    patternMismatch: `Solo se aceptan letras`,
+    valueMissing: `Tu apellido es requerido`,
+    typeMismatch: "mismatch",
+    rangeOverflow: "",
+    rangeUnderflow: "",
+};
+
+const emailErrors: InputError = {
+    tooShort: "",
+    patternMismatch: "",
+    valueMissing: `Tu correo es requerido`,
+    typeMismatch: "El formato de correo es incorrecto",
+    rangeOverflow: "",
+    rangeUnderflow: "",
+};
+
+const birthErrors: InputError = {
+    tooShort: "",
+    patternMismatch: "",
+    valueMissing: `Tu fecha de nacimiento es requerido`,
+    typeMismatch: "",
+    rangeOverflow: "No puedes exceder la fecha",
+    rangeUnderflow: "No puedes tener más de 100 años",
+};
+
+const weigthErrors: InputError = {
+    tooShort: "",
+    patternMismatch: "",
+    valueMissing: `Tu peso aproximado es requerido`,
+    typeMismatch: "",
+    rangeOverflow: "No puedes exceder la fecha",
+    rangeUnderflow: "No puedes exceder más de 440 kilos",
+};
+
+const sizeErrors: InputError = {
+    tooShort: "",
+    patternMismatch: "",
+    valueMissing: `Tu tamaño es requerido`,
+    typeMismatch: "",
+    rangeOverflow: "No puedes tener un medir en negativo",
+    rangeUnderflow: "No puedes tener más de 100 años",
+};
+
+const strRegex = "^[a-z A-Z]*$";
+---
+
+<Input
+    client:load
+    id="name"
+    type="text"
+    placeHolder="Cual es tu nombre?"
+    min={3}
+    pattern={strRegex}
+    errorsMessage={nameErrors}
+    isRequired
+/>
+<Input
+    client:load
+    id="lastName"
+    type="text"
+    placeHolder="Cual es tu Apellidos?"
+    isRequired
+    minLength={3}
+    pattern={strRegex}
+    errorsMessage={lastNameErrors}
+/>
+
+<Input
+    client:load
+    id="email"
+    type="email"
+    placeHolder="Cual es tu Correo?"
+    isRequired
+    errorsMessage={emailErrors}
+/>
+
+<Input
+    client:load
+    id="birth"
+    type="date"
+    placeHolder="Cual es tu fecha nacimiento?"
+    isRequired
+    errorsMessage={birthErrors}
+/>
+
+<Input
+    client:load
+    id="weigth"
+    type="number"
+    placeHolder="Cual es tu peso aproximado en KG?"
+    isRequired
+    errorsMessage={weigthErrors}
+    min={0}
+    max={440}
+/>
+
+<Input
+    client:load
+    id="size"
+    type="number"
+    placeHolder="Cual es tu tamaño en Metros?"
+    isRequired
+    errorsMessage={sizeErrors}
+    step={0.01}
+/>

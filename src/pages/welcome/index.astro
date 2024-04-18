@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SearchSvg from "../../components/svg/Search.astro";
+import Button from "@/components/atoms/button";
+---
+
+<Layout
+	title="Welcome to Astro."
+	mainClass="flex justify-center items-center flex-col"
+>
+	<h1 class="text-8xl">
+		<strong class="text-base-content">Buscas un</strong> Cambio
+	</h1>
+	<SearchSvg className="h-[550px] aspect-auto" toTransition="welcome" />
+	<h2 class="text-4xl">
+		<strong
+			>¡Únete al movimiento hacia una vida más saludable hoy mismo!.
+		</strong>
+	</h2>
+	<h3 class="px-40 text-2xl">
+		<strong class="text-base-content">
+			Es hora de tomar el control de tu bienestar y hacer cambios
+			positivos que
+		</strong><strong>transformen tu vida.</strong>
+	</h3>
+
+	<Button textSize="xl" linkTo="/welcome/step-1" type="link" client:load>
+		Comenzar!!
+	</Button>
+</Layout>
