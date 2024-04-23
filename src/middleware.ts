@@ -15,7 +15,9 @@ const middleware: MiddlewareHandler = ({ locals, url, redirect, cookies }: APICo
         locals.theme = theme.value
     }
 
-    if (!pathname.includes("welcome")) {
+    const permitedPaths = ["welcome", "api"]
+
+    if (!permitedPaths.some(p => pathname.includes(p))) {
         return redirect("/welcome")
     }
 

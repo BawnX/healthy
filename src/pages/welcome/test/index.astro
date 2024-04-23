@@ -1,0 +1,22 @@
+---
+export const prerender = true;
+---
+
+<button
+  class="px-8 mt-4 py-4 bg-secondary text-white rounded-lg lg:hover:scale-[1.04] transition-transform disabled:opacity-50"
+  type="button"
+  id="tgt"
+>
+  Submit
+</button>
+
+<script>
+  import { trpcAstro } from "../../../client";
+  const form = document.querySelector("#tgt");
+  form?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const result = await trpcAstro.getCommentsForBlog.query();
+
+    console.log(result);
+  });
+</script>
